@@ -31,3 +31,10 @@ Challanges for the sensor system:
 # Possibilites:
 
 Apart from the user-interface to create the data, we can also create a port-scanner / processor in the processing section that can read data from a specific port. In future, if we can replace the user-interface with real sensors, we can do this my making no change in the processing section. It will be like unplugging the user-interface and pluggin in the sensor systems. The only thing to keep in mind is both the user-interfaces and the sensor systems shall throw the data in the same fashion in both cases.
+
+# Installation:
+
+1. For linux based systems without XAMPP, clone the repo to /var/www/html (or /var/www/ depending upon the system, check /etc/apache2/apache2.conf). For win/mac/linux with xampp or wamp or lamp, clone to wamp/www/ or xampp/htdocs. 
+2. Update the database Credentials with info of new database, in the root/.env file or create a database with existing dbname, username and password.
+3. Run *php artisan migrate* to create all the tables and references / foreign keys
+4. Run *php artisan serve* . This will make the application server listen to port 8000 by default. To change the default behaviour, you can run *php artisan server --port=yourportno*
