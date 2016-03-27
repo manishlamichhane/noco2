@@ -1,27 +1,33 @@
-# Laravel PHP Framework
+# About noCO2
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+noCO2 is a PHPMySQL web application whose main theme is sustainability. It is a prototype of garbage management system implemented in smart cities. 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+The idea is to mimic the data collection (from sensors in smart cities) by using a user-interface which has a list of garbages. The users click on the different kinds of garbages which represnts the real-world action of filling garbage in the garbage bags in homes. There will be a send button which sends thus cretead garbage data to the processing center. Here all sorts of analysis can be done based on the garbage data.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+We focus maninly on the CO2 emission, wastage, and may be some other factors that raises awarness among the users.
 
-## Official Documentation
+All the processed information will then be made available as an API to the outside world.
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+So broadly, there will be three sections:
 
-## Contributing
+1. Data Producers (For now a UI, but later can be replaced by a sensor system, if possible/feasible)
+2. Data Processor (Input the data, process, save the output to the database)
+3. Data Availability / API (Outside world can access the data vai the API)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
 
-## Security Vulnerabilities
+The system will implement the Serivce Oriented Architecture  so all the components should be independent or minimally independent of each other.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+# Assumptions:
 
-## License
+The system assumes that the infrastracture need for this system to work on already exists. It also assumes that the data is generated from the sensors while infact we have a user interface for the users to create data.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+Challanges for the sensor system:
+
+	* how to categorise different garbage?
+	* what if some garbage cans have some food remaining in them? How to calculate the marginal wastage ?
+	* Will it be feasible to turn the sensors on 24X7 ?
+
+
+# Possibilites:
+
+Apart from the user-interface to create the data, we can also create a port-scanner / processor in the processing section that can read data from a specific port. In future, if we can replace the user-interface with real sensors, we can do this my making no change in the processing section. It will be like unplugging the user-interface and pluggin in the sensor systems. The only thing to keep in mind is both the user-interfaces and the sensor systems shall throw the data in the same fashion in both cases.
