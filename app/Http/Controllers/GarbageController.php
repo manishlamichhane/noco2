@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use View;
+
 class GarbageController extends Controller
 {
     //
@@ -14,11 +16,35 @@ class GarbageController extends Controller
         $this->middleware('auth');
     }
 
-    public function createGarbage(){}
+    public function createGarbage(){
 
-    public function editGarbage(){}
+    	/*echo "A form will be presented here";*/
 
-    public function deleteGarbage(){}
+    	
+
+    	return View::make('garbage/create')->with('garbages',\App\Garbage_category::all());
+
+
+    }
+
+    public function realizeGarbage(){
+
+    	# db insertion takes place here
+
+    }
+
+
+    public function editGarbage(){
+
+    	echo "Garbage will be edited here";
+
+    }
+
+    public function deleteGarbage(){
+
+    	echo "Garbage will be deleted here";
+
+    }
 
 
 

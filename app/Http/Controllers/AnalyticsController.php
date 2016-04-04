@@ -17,5 +17,7 @@ class AnalyticsController extends Controller
 
     # a get request will be sent to Rafiul's system to fetch the json of different analytics
 
+    
+
 
 }

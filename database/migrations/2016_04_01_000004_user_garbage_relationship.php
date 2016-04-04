@@ -18,6 +18,7 @@ class UserGarbageRelationship extends Migration
             $table->increments('user_garbage_id');
             $table->integer('user')->unsigned();
             $table->integer('garbage_type')->unsigned();
+            $table->integer('garbage_unit');
             $table->rememberToken();
             $table->timestamps();
         });

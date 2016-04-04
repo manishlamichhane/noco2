@@ -35,6 +35,12 @@
                           </div>
                          <div class="tab-pane" id="3a">
                                 <h3>Garbage CRUD goes here!</h3>
+                                <br><br>
+                                <a href="/garbage/createGarbage/">Create Garbage</a>
+                                <br><br>
+                                <a href="/garbage/editGarbage/">Edit Garbage</a>
+                                <br><br>
+                                <a href="/garbage/deleteGarbage/">Delete Garbage</a>
                          </div>
 
                          <div class="tab-pane" id="4a">

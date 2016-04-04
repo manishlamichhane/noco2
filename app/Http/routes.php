@@ -19,4 +19,11 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/home', 'HomeController@index');
+
+    Route::get('/garbage/createGarbage', 'GarbageController@createGarbage');
+
+    Route::get('/garbage/editGarbage', 'GarbageController@editGarbage');
+
+    Route::get('/garbage/deleteGarbage', 'GarbageController@deleteGarbage');
+
 });
