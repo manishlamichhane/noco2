@@ -46,6 +46,13 @@ class GarbageController extends Controller
 
     }
 
+    public function returnGarbageType($garbageCatId){
+
+    	echo "You sent :".$garbageCatId;
+
+    	
+    }
+
 
 
 }

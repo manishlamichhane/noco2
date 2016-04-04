@@ -26,4 +26,6 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/garbage/deleteGarbage', 'GarbageController@deleteGarbage');
 
+	Route::get('/garbage/returnGarbageType/{garbageCatId}', 'GarbageController@returnGarbageType');    
+
 });
