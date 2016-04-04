@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class GarbageCategories extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,11 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        //
+        Schema::create('garbage_categories', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->engine = 'InnoDB';
-            $table->increments('user_id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
+            $table->increments('garbage_category_id');
+            $table->string('garbage_category_name');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -31,6 +29,7 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('users');
+        //
+        Schema::drop('garbage_categories');
     }
 }
