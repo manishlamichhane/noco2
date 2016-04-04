@@ -15,9 +15,14 @@
                     <!-- <li class="active">
                       <a href="#1a" data-toggle="tab">Home</a>
                     </li> -->
-                    <li class="active"><a href="#2a" data-toggle="tab">My Garbage History</a>
+                    <li class="active">
+                        <a href="#4a" data-toggle="tab">Analytics</a>
                     </li>
-                    <li><a href="#3a" data-toggle="tab">Garbage Manager</a>
+                    <li>
+                        <a href="#3a" data-toggle="tab">Garbage Manager</a>
+                    </li>
+                    <li>
+                        <a href="#2a" data-toggle="tab">My Garbage History</a>
                     </li>
                   </ul>
 
@@ -26,10 +31,15 @@
                             <h3>Content's background color is the same for the tab</h3>
                           </div> -->
                          <div class="tab-pane active" id="2a">
-                                <h3>Garbage History goes here!</h3>
+                                <h3>Garbage Analytics goes here!</h3>
                           </div>
                          <div class="tab-pane" id="3a">
-                          <h3>Garbage CRUD goes here!</h3>
+                                <h3>Garbage CRUD goes here!</h3>
+                         </div>
+
+                         <div class="tab-pane" id="4a">
+                                
+                                <h3>Garbage History goes here!</h3>
                          </div>
                     </div>
                 </div>
