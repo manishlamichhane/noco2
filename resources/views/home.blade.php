@@ -16,13 +16,13 @@
                       <a href="#1a" data-toggle="tab">Home</a>
                     </li> -->
                     <li class="active">
-                        <a href="#4a" data-toggle="tab">Analytics</a>
+                        <a href="#2a" data-toggle="tab">Analytics</a>
                     </li>
                     <li>
                         <a href="#3a" data-toggle="tab">Garbage Manager</a>
                     </li>
                     <li>
-                        <a href="#2a" data-toggle="tab">My Garbage History</a>
+                        <a href="#4a" data-toggle="tab">My Garbage History</a>
                     </li>
                   </ul>
 
