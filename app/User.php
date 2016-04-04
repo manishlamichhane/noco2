@@ -15,6 +15,11 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
 
+    //Eloquent assumes every table has a primary key as "id"
+    //So in case of using some other primary key, it should be explicitly defined in the model like below
+
+    protected $primaryKey = 'user_id'; 
+
     /**
      * The attributes that should be hidden for arrays.
      *
