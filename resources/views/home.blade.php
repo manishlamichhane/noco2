@@ -77,8 +77,8 @@
 
                               // Set chart options
                               var options = {'title':'My Garbage History: 7 days',
-                                             'width':400,
-                                             'height':300};
+                                             'width':800,
+                                             'height':600};
 
                               // Instantiate and draw our chart, passing in some options.
                               var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
