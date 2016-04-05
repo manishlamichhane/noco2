@@ -32,3 +32,9 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('/garbage/returnGarbageType/{garbageCatId}', 'GarbageController@returnGarbageType');    
 
 });
+
+/*Routes for API defined here */
+
+Route::get('/api/getPastWeekDataAll', 'ApiController@getPastWeekDataAll');
+
+Route::get('/api/getPastWeekDataForUser/{userId}', 'ApiController@getPastWeekDataForUser');
