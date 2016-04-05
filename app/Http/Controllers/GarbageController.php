@@ -10,6 +10,8 @@ use View;
 
 use Auth;
 
+use Session;
+
 class GarbageController extends Controller
 {
     //
@@ -43,7 +45,7 @@ class GarbageController extends Controller
 
     	$user_garbage_relationship->save();
 
-    	return redirect('/home')->with('home_message','Garbage created successfully!');
+    	return redirect('home')->with('home_message','Garbage created successfully!');
 
 
 

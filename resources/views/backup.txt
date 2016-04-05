@@ -1,0 +1,29 @@
+ @if(count($defaultGarbageHistory))
+                                <h2>This Week's History</h2>
+                                <table class="table table-hover" width="400px">
+                                      <thead>
+                                        <tr>
+                                          <th>Garbage Type</th>
+                                          <th>Unit</th>
+                                          <th>Created Date</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+
+                                  @foreach($defaultGarbageHistory as $history)
+                                        <tr>
+                                          <td>{{ $history->garbage_type_name }}</td>
+                                          <td>{{ $history->garbage_unit }}</td>
+                                          <td>{{ $history->created_at }}</td>
+                                        </tr>
+                                  @endforeach  
+
+                                  </tbody>
+                                </table>
+                                @else
+
+                                  <div class="alert alert-success">
+                                      <p>No history to show!</p>
+                                  </div>
+
+                                @endif
