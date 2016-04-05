@@ -5,11 +5,13 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <!-- <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
-                    You are logged in!
-                </div> -->
+                @if (session('home_message'))
+                  <div class="panel-body">
+                        <div class="alert alert-success">
+                            {{ session('home_message') }}
+                        </div>
+                  </div>      
+                @endif
                 <div id="exTab1" class="container">
                   <ul class="nav nav-pills">
                     <!-- <li class="active">

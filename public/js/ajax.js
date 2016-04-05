@@ -8,7 +8,7 @@ $(document).ready(function(){
         	url: '/garbage/returnGarbageType/'+$(this).val(),
         	success:function(reply){
 
-        		alert(reply);
+        		$("#garbage-type").html(reply);
 
         	}
 

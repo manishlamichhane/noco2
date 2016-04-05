@@ -6,7 +6,7 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
 
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="/garbage/realizeGarbage/" method="post">
                   <fieldset>
 
                   <!-- Form Name -->
@@ -31,7 +31,7 @@
                   <div class="form-group">
                     <label class="col-md-4 control-label" for="selectbasic">Garbage Types</label>
                     <div class="col-md-4">
-                      <select id="garbage-category" name="garbage_type" class="form-control">
+                      <select id="garbage-type" name="garbage_type" class="form-control">
                          <option value="0">Select Types</option>
                       </select>
                     </div>
@@ -41,10 +41,14 @@
                   <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Garbage Unit</label>  
                     <div class="col-md-4">
-                    <input id="textinput" name="garbage_unit" type="text" placeholder="eg. 1 2 etc" class="form-control input-md" required="">
+                    <input id="textinput" name="garbage_unit" type="text" placeholder="eg. 1 2 etc" class="form-control input-md" required="true">
                       
                     </div>
                   </div>
+
+                  <!-- CSRF token -->
+
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                   <!-- Button -->
                   <div class="form-group">

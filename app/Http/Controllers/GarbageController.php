@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use View;
 
+use Auth;
+
 class GarbageController extends Controller
 {
     //
@@ -27,9 +29,23 @@ class GarbageController extends Controller
 
     }
 
-    public function realizeGarbage(){
+    public function realizeGarbage(Request $request){
 
     	# db insertion takes place here
+
+    	$user_garbage_relationship = new \App\User_garbage_relationship;
+
+    	$user_garbage_relationship->user = Auth::id();
+
+    	$user_garbage_relationship->garbage_type = $request->garbage_type;
+
+    	$user_garbage_relationship->garbage_unit = $request->garbage_unit;
+
+    	$user_garbage_relationship->save();
+
+    	return redirect('/home')->with('home_message','Garbage created successfully!');
+
+
 
     }
 
@@ -48,9 +64,10 @@ class GarbageController extends Controller
 
     public function returnGarbageType($garbageCatId){
 
-    	echo "You sent :".$garbageCatId;
-
+    	/*echo "You sent :".$garbageCatId;*/
     	
+    	
+    	return View::make('garbage.garbage-type-ajax')->with('garbageTypes',\App\Garbage_type::where('garbage_cat_name','=',$garbageCatId)->get());;    	
     }
 
 
