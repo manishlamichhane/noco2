@@ -18,17 +18,26 @@
     <style>
         body {
             font-family: 'Lato';
+            background-color: seagreen;
+
         }
 
         .fa-btn {
             margin-right: 6px;
         }
+
+        .carousel-inner > .item > img,
+        .carousel-inner > .item > a > img {
+                width: 90%;
+                height:50%;
+                margin: auto;
+        }
     </style>
 </head>
-<body id="app-layout">
+<body id="app-layout" >
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
-            <div class="navbar-header">
+            <div class="navbar-header" style="">
 
                 <!-- Collapsed Hamburger -->
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
