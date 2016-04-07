@@ -36,5 +36,12 @@ Apart from the user-interface to create the data, we can also create a port-scan
 
 1. For linux based systems without XAMPP, clone the repo to /var/www/html (or /var/www/ depending upon the system, check /etc/apache2/apache2.conf). For win/mac/linux with xampp or wamp or lamp, clone to wamp/www/ or xampp/htdocs. 
 2. Update the database Credentials with info of new database, in the root/.env file or create a database with existing dbname, username and password.
-3. Run *php artisan migrate* to create all the tables and references / foreign keys
-4. Run *php artisan serve* . This will make the application server listen to port 8000 by default. To change the default behaviour, you can run *php artisan server --port=yourportno*
+3. Install composer (if not done) and run "composer update"
+4. Generate encryption key for Laravel using "php artisan key:generate"
+5. Run *php artisan migrate* to create all the tables and references / foreign keys
+
+or
+
+5. Import the database using the dbnoco2_2016.sql file 
+
+6. Run *php artisan serve* . This will make the application server listen to port 8000 by default. To change the default behaviour, you can run *php artisan server --port=yourportno*

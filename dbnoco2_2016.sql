@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 06, 2016 at 12:39 AM
+-- Generation Time: Apr 08, 2016 at 01:04 AM
 -- Server version: 5.5.47-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.14
 
@@ -126,19 +126,23 @@ CREATE TABLE IF NOT EXISTS `users` (
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `location` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Manish Lamichhane', 'manishlamichhane@gmail.com', '$2y$10$1rwCAigMZ8vROtJZk7RZfOpcaOdj/RuJ4Ayn8bkUKHyA4TgHUNCDS', 'MThPQHginNz2JdP50okMwNZGJ9NjaRl2q4Mwhca5iiGUxCBSIvcV3zD11jav', '2016-04-04 05:05:55', '2016-04-05 18:29:23');
+INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `location`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Manish Lamichhane', 'manishlamichhane@gmail.com', '$2y$10$1rwCAigMZ8vROtJZk7RZfOpcaOdj/RuJ4Ayn8bkUKHyA4TgHUNCDS', 'Ruskonlahdenkattu', 'LHfgPIJXDktpXgiX4EhwSzo7qzR56ue46SYLMsVMy4ubUq7i3p8RE1y7RCC3', '2016-04-04 05:05:55', '2016-04-06 17:02:47'),
+(2, 'John Doe', 'johndoe@gmail.com', '$2y$10$VA0HyToqgqbh0MPzjMHyV.Xs4TFpfZND6Ai/kuGAAuGPjgD9ZobVu', 'Karankukattu', NULL, '2016-04-06 19:10:38', '2016-04-06 19:10:38'),
+(3, 'Chandara Chea', 'chandara.chea@gmail.com', '$2y$10$kCr3HdBR21HIt9LEK5ZYB.kBTh2iPt6.HxIOBkbsd/w1JZsCQr6jq', 'Punkkerikattu', NULL, '2016-04-07 07:56:48', '2016-04-07 07:56:48'),
+(5, 'Emil Hedemalm', 'emil.hedemalm@hotmail.com', '$2y$10$W/irHKE5NW3QMXYUCNwf8O8kaV61BpJ1TvQuTcbpPHbtqzBfWkkiq', 'Ruskonlahdenkattu', NULL, '2016-04-07 17:45:10', '2016-04-07 17:45:10');
 
 -- --------------------------------------------------------
 
@@ -157,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `user_garbage_relationships` (
   PRIMARY KEY (`user_garbage_id`),
   KEY `user_garbage_relationships_user_foreign` (`user`),
   KEY `user_garbage_relationships_garbage_type_foreign` (`garbage_type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=18 ;
 
 --
 -- Dumping data for table `user_garbage_relationships`
@@ -172,7 +176,15 @@ INSERT INTO `user_garbage_relationships` (`user_garbage_id`, `user`, `garbage_ty
 (6, 1, 10, 1, NULL, '2016-04-05 08:45:12', '2016-04-05 08:45:12'),
 (7, 1, 11, 1, NULL, '2016-04-05 08:49:50', '2016-04-05 08:49:50'),
 (8, 1, 12, 1, NULL, '2016-04-05 08:59:59', '2016-04-05 08:59:59'),
-(9, 1, 6, 3, NULL, '2016-04-05 09:04:07', '2016-04-05 09:04:07');
+(9, 1, 6, 3, NULL, '2016-04-05 09:04:07', '2016-04-05 09:04:07'),
+(10, 2, 4, 2, NULL, '2016-04-06 19:10:53', '2016-04-06 19:10:53'),
+(11, 2, 7, 5, NULL, '2016-04-06 19:11:17', '2016-04-06 19:11:17'),
+(12, 2, 12, 3, NULL, '2016-04-06 19:11:38', '2016-04-06 19:11:38'),
+(13, 3, 10, 3, NULL, '2016-04-07 07:57:47', '2016-04-07 07:57:47'),
+(14, 3, 6, 4, NULL, '2016-04-07 07:58:52', '2016-04-07 07:58:52'),
+(15, 5, 10, 6, NULL, '2016-04-07 17:45:45', '2016-04-07 17:45:45'),
+(16, 5, 3, 5, NULL, '2016-04-07 17:46:01', '2016-04-07 17:46:01'),
+(17, 5, 6, 8, NULL, '2016-04-07 17:46:15', '2016-04-07 17:46:15');
 
 --
 -- Constraints for dumped tables
