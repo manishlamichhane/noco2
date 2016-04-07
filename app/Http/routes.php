@@ -35,6 +35,7 @@ Route::group(['middleware' => 'web'], function () {
 
 /*Routes for API defined here */
 
-Route::get('/api/getPastWeekDataAll', 'ApiController@getPastWeekDataAll');
 
-Route::get('/api/getPastWeekDataForUser/{userId}', 'ApiController@getPastWeekDataForUser');
+Route::get('/api/getAllUserUnit', 'ApiController@getAllUserUnit');
+
+Route::get('/api/getLocationUnitAll', 'ApiController@getLocationUnitAll');

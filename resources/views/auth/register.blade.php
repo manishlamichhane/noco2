@@ -24,6 +24,25 @@
                             </div>
                         </div>
 
+                         <div class="form-group{{ $errors->has('location') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Location</label>
+
+                            <div class="col-md-4">
+                                <select class="form-control" name="location">
+                                    <option value="Ruskonlahdenkattu">Ruskonlahdenkattu</option>
+                                    <option value="Punkkerikattu">Punkkerikattu</option>
+                                    <option value="Karunkukattu">Karunkukattu</option>
+                                </select>
+
+                                @if ($errors->has('location'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('location') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        
+
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">E-Mail Address</label>
 
