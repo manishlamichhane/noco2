@@ -14,7 +14,7 @@ class ApiController extends Controller
 {
 
 
-    public function getAllUserUnit(){
+    public function getUserUnitAll(){
 
         /*
             
@@ -47,8 +47,27 @@ class ApiController extends Controller
         echo json_encode(DB::select($query));
 
 
+    }
+
+
+    public function getGarbageUnitAll(){
+
+        /*
+            
+            This method returns all the garbage and their consumption in unit over the past week
+    
+        */
+
+        $oneWeekBackFromNow = date('Y-m-d H:i:s',strtotime('-1 week'));
+
+        $query = "SELECT garbage_type_name,sum(garbage_unit) as garbage_unit FROM user_garbage_relationships x inner join garbage_types y on x.garbage_type = y.garbage_type_id and x.created_at >= '".$oneWeekBackFromNow."' group by garbage_type;";
+
+        echo json_encode(DB::select($query));
+
 
     }
+
+
     
 }
 

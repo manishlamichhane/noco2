@@ -31,11 +31,15 @@ Route::group(['middleware' => 'web'], function () {
 
 	Route::get('/garbage/returnGarbageType/{garbageCatId}', 'GarbageController@returnGarbageType');    
 
+	Route::get('/garbage/removeGarbage/{userGarbageId}', 'GarbageController@removeGarbage');  
+
 });
 
 /*Routes for API defined here */
 
 
-Route::get('/api/getAllUserUnit', 'ApiController@getAllUserUnit');
+Route::get('/api/getUserUnitAll', 'ApiController@getUserUnitAll');
 
 Route::get('/api/getLocationUnitAll', 'ApiController@getLocationUnitAll');
+
+Route::get('/api/getGarbageUnitAll', 'ApiController@getGarbageUnitAll');

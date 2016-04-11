@@ -12,6 +12,8 @@ use Auth;
 
 use Session;
 
+use DB;
+
 class GarbageController extends Controller
 {
     //
@@ -23,8 +25,6 @@ class GarbageController extends Controller
     public function createGarbage(){
 
     	/*echo "A form will be presented here";*/
-
-    	
 
     	return View::make('garbage/create')->with('garbages',\App\Garbage_category::all());
 
@@ -60,7 +60,25 @@ class GarbageController extends Controller
 
     public function deleteGarbage(){
 
-    	echo "Garbage will be deleted here";
+        $oneWeekBackFromNow = date('Y-m-d H:i:s',strtotime('-1 week'));
+
+        $query = "select x.user_garbage_id,y.garbage_type_name,x.garbage_unit,x.created_at from user_garbage_relationships x inner join garbage_types y on x.garbage_type = y.garbage_type_id where x.created_at >='".$oneWeekBackFromNow."' and x.user = ".Auth::id();
+
+
+        return View::make('garbage/delete')->with('garbages',DB::select($query));
+        
+
+    }
+
+
+    public function removeGarbage($userGarbageId){
+
+        if(\App\User_garbage_relationship::find($userGarbageId)->forceDelete())
+
+            return redirect('home')->with('home_message','Garbage deleted successfully!');
+
+        return redirect('home')->with('home_message','Garbage could not be deleted successfully!');
+
 
     }
 
