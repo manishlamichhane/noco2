@@ -43,3 +43,7 @@ Route::get('/api/getUserUnitAll', 'ApiController@getUserUnitAll');
 Route::get('/api/getLocationUnitAll', 'ApiController@getLocationUnitAll');
 
 Route::get('/api/getGarbageUnitAll', 'ApiController@getGarbageUnitAll');
+
+Route::get('/api/getUserIndividualGarbageHistory', 'ApiController@getUserIndividualGarbageHistory');
+
+
